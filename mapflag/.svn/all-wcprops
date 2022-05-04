@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/rathena/rathena/!svn/ver/53170/trunk/npc/mapflag
+END
+nopvp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/nopvp.txt
+END
+pvp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/pvp.txt
+END
+nowarp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/nowarp.txt
+END
+partylock.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/partylock.txt
+END
+restricted.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/restricted.txt
+END
+nopenalty.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/nopenalty.txt
+END
+night.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/31514/trunk/npc/mapflag/night.txt
+END
+nowarpto.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/nowarpto.txt
+END
+noskill.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/noskill.txt
+END
+noreturn.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/noreturn.txt
+END
+nocostume.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/19494/trunk/npc/mapflag/nocostume.txt
+END
+skill_damage.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/33818/trunk/npc/mapflag/skill_damage.txt
+END
+noicewall.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/41366/trunk/npc/mapflag/noicewall.txt
+END
+nightmare.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/nightmare.txt
+END
+jail.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/rathena/rathena/!svn/ver/19494/trunk/npc/mapflag/jail.txt
+END
+pvp_noparty.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/pvp_noparty.txt
+END
+reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/reset.txt
+END
+gvg.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/gvg.txt
+END
+skill_duration.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/rathena/rathena/!svn/ver/39116/trunk/npc/mapflag/skill_duration.txt
+END
+hidemobhpbar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/hidemobhpbar.txt
+END
+pvp_noguild.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/pvp_noguild.txt
+END
+town.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/town.txt
+END
+nomemo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/53170/trunk/npc/mapflag/nomemo.txt
+END
+nobranch.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/nobranch.txt
+END
+battleground.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/11754/trunk/npc/mapflag/battleground.txt
+END
+nosave.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/nosave.txt
+END
+noteleport.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/noteleport.txt
+END
+gvg_noparty.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/31905/trunk/npc/mapflag/gvg_noparty.txt
+END

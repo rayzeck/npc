@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/jobs/1-1
+END
+merchant.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/14180/trunk/npc/re/jobs/1-1/merchant.txt
+END
+archer.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rathena/rathena/!svn/ver/14180/trunk/npc/re/jobs/1-1/archer.txt
+END
+mage.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/jobs/1-1/mage.txt
+END
+swordman.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/14180/trunk/npc/re/jobs/1-1/swordman.txt
+END
+thief.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/jobs/1-1/thief.txt
+END
+acolyte.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/jobs/1-1/acolyte.txt
+END

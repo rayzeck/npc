@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/rathena/rathena/!svn/ver/27640/trunk/npc/test
+END
+OnInterInit.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/11801/trunk/npc/test/OnInterInit.txt
+END
+npc_test_checkweight.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/rathena/rathena/!svn/ver/11967/trunk/npc/test/npc_test_checkweight.txt
+END
+npc_test_longvar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rathena/rathena/!svn/ver/27640/trunk/npc/test/npc_test_longvar.txt
+END
+infinite_warp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rathena/rathena/!svn/ver/12170/trunk/npc/test/infinite_warp.txt
+END

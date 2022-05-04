@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/56409/trunk/npc/custom/battleground
+END
+bg_emp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/rathena/rathena/!svn/ver/42805/trunk/npc/custom/battleground/bg_emp.txt
+END
+bg_pvp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/rathena/rathena/!svn/ver/30643/trunk/npc/custom/battleground/bg_pvp.txt
+END

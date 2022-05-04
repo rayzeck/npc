@@ -1,0 +1,153 @@
+treinamento,73,169,6	script	Invocador	1153,{
+
+		if(!getcharid(1)){ // Esta função verifica se o jogador tem um grupo
+		mes "Desculpe mas você precisa estar em um grupo para fazer a raid.";
+		close;
+		}
+		
+		getpartymember(getcharid(CHAR_ID_PARTY), 1);
+		getpartymember(getcharid(CHAR_ID_PARTY), 2);
+		if ($@partymembercount > 5) { // Esta função checa se a quantidade de membros é diferente de 5
+		mes .@npcname$;
+		mes "O grupo deve possuir no minimo 5 integrantes!";
+		close;
+		}
+		
+		if(questorc1 == GetTime(8)) { mes "Você já fez essa raid hoje. Volte amanhã!"; close;} 
+		mes "[Invocador]";
+		mes "Olá. Sou o invocador da Raid Orc";
+		mes "Você quer iniciar a Raid?";
+		menu "Sim!",quero,"Não",nao;
+             				
+   	        quero:
+     	        mes "[Invocador]";
+   	        mes "Certo. Então eu serei breve na explicação.";
+   	        next;
+   	        mes "Quando você for teleportado, você deverá seguir as instruções por anúncios.";
+   	        mes "Não é nada muito dificil. Talvez seja pra você, que é um baita fracote.";
+   	        next;
+      		mes "Vá! Tá esperando o que?";
+		next;
+		warp "pay_dun00",21,186;
+		hideonnpc "Orc#2";
+		hideonnpc "Orc#3";
+		sleep2 2500;
+		announce "Ola ninjas do grupo "+strcharinfo(1)+".",1;
+		sleep2 1000;
+		announce "Em algum lugar deste mapa, há um ninja Obscuro. Destruam-no!",1;
+		monster "pay_dun00",0,0,"Ninja Obscuro",3600,1,"Invocador::OnQuandoNinjaMorrer";
+		end;
+//		areamonster "pay_dun00",33,155,92,128,"Orc Obscuro",3599,150,"OnQuandoNinjaMorrer";
+		close;
+
+      		nao:
+      		mes "[Invocador]";
+      		mes "Então vá embora, oras!";
+      		close;
+
+
+	
+
+		
+	OnQuandoNinjaMorrer:
+		announce "Parabéns! Vocês são realmente fortes.",1;
+		sleep2 3000;
+		hideoffnpc "Orc#2";
+		announce "Um Orc está no lado direito do mapa esperando por vocês.",1;
+		sleep2 3000;
+		announce "Corram até lá!",1;
+		end;
+		
+		OnQuandoIbuseMorrer:
+		announce "AAAARGH. Você não era a minha preferida mesmo.",1;
+		sleep2 3000;
+		announce "Agora é sua vez, meu querido. Vá!",1;
+		sleep2 3000;
+		announce "***O Orc usa uma outra invocação no mesmo local.***",1;
+		monster "pay_dun00",135,139,"Sapo Obscuro",3710,1,"Invocador::OnQuandoSapoMorrer";
+		end;
+		
+		OnQuandoSapoMorrer:
+		announce "Vocês as derrotaram? NÃOOOOOOOOOOOOO!",1;
+		sleep2 3000;
+		announce "Agora, eu acho que é minha VEZ.",1;
+		sleep2 3000;
+		announce "PREPAREM-SE!",1;
+		monster "pay_dun00",135,139,"Orc Verdadeiro",1242,1,"Invocador::OnQuandoOrcAparece";
+		end;
+
+		OnQuandoOrcAparece:
+		announce "Vocês me derrotaram!",1;
+		sleep2 3000;
+		announce "Mas na próxima, eu vencerei vocês!",1;
+		sleep2 3000;
+		hideoffnpc "Orc#3";
+		announce "Um NPC foi desbloqueado no último portal do mapa.",1;
+				
+		end;
+	}
+pay_dun00,135,139,4	script	Orc#2	1153,{
+	if(getpartyleader(getcharid(1),2) != getcharid(0)) {
+		mes "[Orc]";
+		mes "Apesar o líder do grupo pode me desafiar!";
+		close;
+	}
+	
+	announce "Vocês realmente acharam que era só isso? Não. Isso não acaba assim.",1;
+	sleep2 3000;
+	announce "Vocês precisarão derrotar as minhas crias, AHAHAHAHA",1;
+	sleep2 2500;
+	announce "Venham, crianças, venham",1;
+	hideonnpc "Orc#2";
+	monster "pay_dun00",135,139,"Salamandra Obscura",3709,1,"Invocador::OnQuandoIbuseMorrer";
+	end;
+}
+pay_dun00,183,33,4	script	Orc#3	1153,{
+
+	if(getcharid(0) != getpartyleader(getcharid(1),2)) {
+		mes "Parabéns por completar a missão, aqui está sua premiação!";
+		query_sql("UPDATE `char` SET `quest_points` = `quest_points` + 250 WHERE `char_id` = '"+getcharid(0)+"'");
+		dispbottom "Você ganhou 250 pontos de missão.";
+		next;
+		mes "Até a próxima aventura!";
+		getitem 734,2;
+		set questorc1, GetTime(8);
+		set raidon,0;
+		close2;
+		warp "SavePoint",0,0;
+	}
+
+	getpartymember getcharid(1),1;
+	getpartymember getcharid(1),2;
+	for(.@i = 0; .@i < $@partymembercount; .@i++) {
+		if($@partymembercount > 5) {
+			mes "Seu Grupo é muito grande. Reduza a quantidade de membros. Só é permitido 5 pessoas.";
+			instance_destroy;
+			close;
+		}
+	}
+	mes "^ff0000[Orc]^000000";
+	mes "Atenção líder, você deve ser o último a confirmar a saída comigo! Aguarde os membros do seu grupo pegarem a premiação...";
+	announce "Atenção Shinobis, vocês precisam pegar a premiação antes do líder!",1;
+	next;
+	mes "^ff0000[Orc]^000000";
+	mes "Verificou se todos pegaram a premiação, líder?";
+	menu "Não.",saida,"Sim.",sim;
+
+	sim:
+	close2;
+	query_sql("UPDATE `char` SET `quest_points` = `quest_points` + 250 WHERE `char_id` = '"+getcharid(0)+"'");
+	dispbottom "Você ganhou 250 pontos de missão.";
+	getitem 734,2;
+	set questorc1, GetTime(8);
+	set raidon,0;	
+	announce "O time ["+getpartyname(getcharid(1))+"] acaba de completar a Raid Orc.",bc_all;	
+	warp "SavePoint",0,0;
+	end;
+
+	saida:
+	next;
+	mes "^ff0000[Orc]^000000";
+	mes "Aguarde todos jogadores pegarem o prêmio!";
+	close;
+}

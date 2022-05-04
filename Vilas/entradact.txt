@@ -1,0 +1,118 @@
+konoha3,100,231,5	script	Campo de Treinamento#1	843,{
+
+if(#konoha) {
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+
+}
+
+mes "[Campo de Treinamento]";
+mes "Você não é membro dessa vila.";
+close;
+}
+
+sunagakure,229,261,5	script	Campo de Treinamento#2	843,{
+
+if(#suna) {
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+
+}
+
+mes "[Campo de Treinamento]";
+mes "Você não é membro dessa vila.";
+close;
+}
+
+kirigakure,223,171,5	script	Campo de Treinamento#3	843,{
+
+if(#nevoa) {
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+
+}
+
+mes "[Campo de Treinamento]";
+mes "Você não é membro dessa vila.";
+close;
+}
+
+kumogakure,97,128,5	script	Campo de Treinamento#4	843,{
+
+if(#nuvem) {
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+
+}
+
+mes "[Campo de Treinamento]";
+mes "Você não é membro dessa vila.";
+close;
+}
+
+akatsuki,187,208,5	script	Campo de Treinamento#5	843,{
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+}
+
+thana_boss,106,154,5	script	Campo de Treinamento#5	843,{
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+}
+
+lou_in02,51,174,5	script	Campo de Treinamento#5	843,{
+
+mes "[Campo de Treinamento]";
+mes "Gostaria de ir para o Campo de Treinamento ?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "treinamento",98,136; 
+end;
+}
+
+treinamento,79,107,5	script	Nukenin Base	70,{
+if (countitem(31225) >= 1) {
+
+mes "[Acesso a base]";
+mes "Gostaria de voltar para a base da facção?";
+if(select("- Sim:- Não") == 2) close;
+close2;
+warp "thana_boss",114,152; 
+end;
+
+}
+
+mes "[Acesso a base]";
+mes "Você não é membro da facção.";
+close;
+}

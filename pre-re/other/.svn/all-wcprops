@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/rathena/rathena/!svn/ver/12905/trunk/npc/pre-re/other
+END
+resetskill.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/rathena/rathena/!svn/ver/11754/trunk/npc/pre-re/other/resetskill.txt
+END
+pvp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/11754/trunk/npc/pre-re/other/pvp.txt
+END
+bulletin_boards.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/rathena/rathena/!svn/ver/12905/trunk/npc/pre-re/other/bulletin_boards.txt
+END
+mercenary_rent.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/rathena/rathena/!svn/ver/11754/trunk/npc/pre-re/other/mercenary_rent.txt
+END
+turbo_track.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/rathena/rathena/!svn/ver/11754/trunk/npc/pre-re/other/turbo_track.txt
+END
+msg_boards.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/rathena/rathena/!svn/ver/11754/trunk/npc/pre-re/other/msg_boards.txt
+END

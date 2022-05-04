@@ -1,0 +1,177 @@
+// =============================================================== //
+//- Script para bloqueio de login duplo 
+// =============================================================== //
+//- Escrito por Kant, Carlos Henrique e Outros usuários do cronus.
+// =============================================================== //
+// Testado in-game usando emulador cronus revisão 3092 trunk.
+// =============================================================== //
+// NPC: uso e configurações.
+//  -> O npc está configurado para o mapa <bat_room>
+//  -> Para adicionar mais mapas siga o modelo da mapflag.
+// =============================================================== //
+
+-	script	blockdual	-1,{
+OnPCLoadMapEvent:
+	if (#irmao == 1) { end; }
+	if(getgmlevel() >= 99) { end; }    // se quizer que gm ou adm não passe pelo sistema tire o //
+	query_sql "SELECT `name` FROM `char` INNER JOIN `login` ON `login`.`account_id` = `char`.`account_id` WHERE `char`.`online` = '1' AND `login`.`last_ip` IN (SELECT `last_ip` FROM `login` WHERE `login`.`account_id` = '"+getcharid(3)+"')",.@name$;
+	for(set @i,0; @i < getarraysize(.@name$) && getarraysize(.@name$) > 1; set @i,@i+1){
+		if(getcharid(0) == getcharid(0,.@name$[@i])) continue;
+		atcommand "@adjgmlvl 0 "+.@name$[@i];
+		atcommand "@kick "+.@name$[@i];
+	}
+	if (getarraysize(.@name$) > 1) {
+		mes "^FF0000[Guarda]^000000";
+		mes "Desculpe, não é permitido multi-client nesse mapa!";
+		close2;
+	}
+
+end;
+}
+
+// Mapflag
+force_1-1	mapflag	loadevent
+konoha3		mapflag	loadevent
+sunagakure	mapflag	loadevent
+1@exame		mapflag	loadevent
+1@ponte		mapflag	loadevent
+2@tower		mapflag loadevent
+6@tower		mapflag loadevent
+dic_fild01	mapflag loadevent
+treinamento mapflag loadevent
+lou_in02	mapflag loadevent
+lhz_dun02	mapflag	loadevent
+kumogakure	mapflag	loadevent
+academia	mapflag	loadevent
+treinamento	mapflag	loadevent
+hospital	mapflag	loadevent
+hospital2	mapflag	loadevent
+hospital3	mapflag	loadevent
+hospital4	mapflag	loadevent
+salakage	mapflag	loadevent
+salakage2	mapflag	loadevent
+salakage3	mapflag	loadevent
+salakage4	mapflag	loadevent
+treinamento	mapflag	loadevent
+
+// Instances ===================
+1@cata	mapflag	loadevent
+2@cata	mapflag	loadevent
+1@orcs	mapflag	loadevent
+2@orcs	mapflag	loadevent
+1@tower	mapflag	loadevent
+2@tower	mapflag	loadevent
+3@tower	mapflag	loadevent
+4@tower	mapflag	loadevent
+5@tower	mapflag	loadevent
+6@tower	mapflag	loadevent
+
+// GvG Arenas ===================
+guild_vs1	mapflag	loadevent
+guild_vs2	mapflag	loadevent
+guild_vs3	mapflag	loadevent
+guild_vs4	mapflag	loadevent
+guild_vs5	mapflag	loadevent
+
+// Cities ========================
+ayo_in01	mapflag	loadevent
+ayo_in02	mapflag	loadevent
+alberta_in	mapflag	loadevent
+alde_alche	mapflag	loadevent
+aldeba_in	mapflag	loadevent
+aldebaran	mapflag	loadevent
+ama_in01	mapflag	loadevent
+ama_in02	mapflag	loadevent
+amatsu		mapflag	loadevent
+cmd_in01	mapflag	loadevent
+cmd_in02	mapflag	loadevent
+comodo		mapflag	loadevent
+gef_tower	mapflag	loadevent
+geffen		mapflag	loadevent
+geffen_in	mapflag	loadevent
+gon_in		mapflag	loadevent
+gonryun		mapflag	loadevent
+gon_test	mapflag	loadevent
+in_hunter	mapflag	loadevent
+in_moc_16	mapflag	loadevent
+in_orcs01	mapflag	loadevent
+izlude_in	mapflag	loadevent
+izlude		mapflag	loadevent
+hugel		mapflag	loadevent
+hu_in01		mapflag	loadevent
+lighthalzen	mapflag	loadevent
+lhz_airport	mapflag	loadevent
+lhz_in01	mapflag	loadevent
+lhz_in02	mapflag	loadevent
+lhz_in03	mapflag	loadevent
+
+lou_in01	mapflag	loadevent
+lou_in02	mapflag	loadevent
+moc_castle	mapflag	loadevent
+monk_in		mapflag	loadevent
+morocc_in	mapflag	loadevent
+morocc		mapflag	loadevent
+mosk_in		mapflag	loadevent
+nif_in		mapflag	loadevent
+payon_in01	mapflag	loadevent
+payon_in02	mapflag	loadevent
+payon_in03	mapflag	loadevent
+payon		mapflag	loadevent
+pay_arche	mapflag	loadevent
+prt_are_in	mapflag	loadevent
+prt_are01	mapflag	loadevent
+prt_castle	mapflag	loadevent
+prt_church	mapflag	loadevent
+prt_in		mapflag	loadevent
+prontera	mapflag	loadevent
+sec_in01	mapflag	loadevent
+job_sword1	mapflag	loadevent
+um_in		mapflag	loadevent
+umbala		mapflag	loadevent
+xmas_in		mapflag	loadevent
+xmas		mapflag	loadevent
+yuno_in01	mapflag	loadevent
+yuno_in03	mapflag	loadevent
+yuno_in04	mapflag	loadevent
+yuno_in05	mapflag	loadevent
+yuno	mapflag	loadevent
+yuno_pre	mapflag	loadevent
+y_airport	mapflag	loadevent
+rachel		mapflag	loadevent
+ra_in01		mapflag	loadevent
+ra_temin	mapflag	loadevent
+airplane	mapflag	loadevent
+airport		mapflag	loadevent
+einbech		mapflag	loadevent
+einbroch	mapflag	loadevent
+ein_in01	mapflag	loadevent
+ayothaya	mapflag	loadevent
+veins		mapflag	loadevent
+ve_in		mapflag	loadevent
+ve_in02		mapflag	loadevent
+cave		mapflag	loadevent
+
+e_tower		mapflag	loadevent
+
+mid_camp	mapflag	loadevent
+mid_campin	mapflag	loadevent
+man_fild01	mapflag	loadevent
+moc_fild22b	mapflag	loadevent
+que_dan01	mapflag	loadevent
+que_dan02	mapflag	loadevent
+schg_que01	mapflag	loadevent
+arug_que01	mapflag	loadevent
+
+manuk	mapflag	loadevent
+man_in01	mapflag	loadevent
+splendide	mapflag	loadevent
+spl_in01	mapflag	loadevent
+spl_in02	mapflag	loadevent
+prt_in		mapflag	loadevent
+pay_fild07	mapflag	loadevent
+moc_fild12	mapflag	loadevent
+
+//evt_zombie	mapflag	loadevent
+
+ama_dun01	mapflag	loadevent
+izlu2dun	mapflag	loadevent

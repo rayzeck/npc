@@ -1,0 +1,12 @@
+-	script	correcaoskills	-1,{
+
+OnPCLoginEvent:
+	//-------------------------------------
+//	if (countitem(30101) || countitem(30102)) {
+	if(countitem(30101) || countitem(30102)  || countitem(30103) || countitem(30104) || countitem(30105) || countitem(30106) || countitem(30107) || countitem(30108) || countitem(30109) || countitem(30110) || countitem(30111) || countitem(30112) || countitem(30113) || countitem(30114) || countitem(30115) || countitem(30116) || countitem(30117) || countitem(30118) || countitem(30119) || countitem(30120) || countitem(30121) || countitem(30122) || countitem(30123) || countitem(30124) || countitem(30125) || countitem(30126) || countitem(30127) || countitem(30128) || countitem(30129) || countitem(30130) || countitem(30131) || countitem(30132) || countitem(30133) || countitem(30134) || countitem(30136) || countitem(30138) || countitem(1236) || countitem(30135)) {
+		
+	delitem 1116,1;
+	getitem 2003,1;
+	}
+
+	

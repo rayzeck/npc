@@ -1,0 +1,192 @@
+//Criado por Maathy & Wolf SF
+//Modificado e corrigido por dgdouglas
+//Todos os Direitos reservados
+//|------------------| PVP sem Cargos |------------------|
+
+prontera,158,184,5	script	PVP Sem Cargo::semcargo	1996,{
+
+
+mes "[PvP Sem Cargo]";
+
+mes "E ai, Shinobi! Gostaria de ir para a nova sala PvP criada para guerrar sem cargo?";
+
+next;
+
+menu "Sim, vou derrotar todos!",C_DON,"Ainda nao",-;
+
+mes "[PvP Sem Cargo]";
+
+mes "Muito bem, evolua e volte";
+
+close;
+
+
+C_DON:
+
+mes "[PvP Sem Cargo]";
+
+mes "Temos atualmente ^FF0000["+ (getmapusers("pvp_n_4-4.gat"))+ "]^000000 players no PvP!";
+
+next;
+
+mes "Voce quer ir?";
+
+next;
+
+menu "Sim, claro!",sim,"Não, obrigado!",-;
+
+mes "[PvP Sem Cargo]";
+
+mes "Volte sempre!";
+
+close;
+
+
+sim:
+
+mes "[PvP Sem Cargo]";
+
+mes "Lembrando que os comandos como @storage ... são anulados nesta sala!";
+
+next;
+
+if(countitem(30065)>= 1) goto DON;
+
+if(countitem(2199)>= 1) goto DON;
+
+if(countitem(20043)>= 1) goto DON;
+
+if(countitem(20044)>= 1) goto DON;
+
+if(countitem(20045)>= 1) goto DON;
+
+if(countitem(20046)>= 1) goto DON;
+
+if(countitem(20047)>= 1) goto DON;
+
+if(countitem(20048)>= 1) goto DON;
+
+if(countitem(20049)>= 1) goto DON;
+
+if(countitem(20050)>= 1) goto DON;
+
+if(countitem(20082)>= 1) goto DON;
+
+if(countitem(23006)>= 1) goto DON;
+
+if(countitem(23007)>= 1) goto DON;
+
+if(countitem(23008)>= 1) goto DON;
+
+if(countitem(23010)>= 1) goto DON;
+
+if(countitem(24106)>= 1) goto DON;
+
+if(countitem(24107)>= 1) goto DON;
+
+if(countitem(24108)>= 1) goto DON;
+
+if(countitem(24109)>= 1) goto DON;
+
+if(countitem(24110)>= 1) goto DON;
+
+if(countitem(20001)>= 1) goto DON;
+
+if(countitem(24111)>= 1) goto DON;
+
+if(countitem(24112)>= 1) goto DON;
+
+if(countitem(24113)>= 1) goto DON;
+
+if(countitem(24114)>= 1) goto DON;
+
+if(countitem(24115)>= 1) goto DON;
+
+if(countitem(24119)>= 1) goto DON;
+
+if(countitem(20110)>= 1) goto DON;
+
+if(countitem(20112)>= 1) goto DON;
+
+if(countitem(20113)>= 1) goto DON;
+
+if(countitem(20114)>= 1) goto DON;
+
+if(countitem(20115)>= 1) goto DON;
+
+if(countitem(20083)>= 1) goto DON;
+
+if(countitem(20084)>= 1) goto DON;
+
+if(countitem(30086) == 1) { delitem 30086,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(31064) == 1) { delitem 31064,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30063) == 1) { delitem 30063,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30062) == 1) { delitem 30062,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30061) == 1) { delitem 30061,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30060) == 1) { delitem 30060,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(31056) == 1) { delitem 31056,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30086) == 1) { delitem 30086,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(31108) == 1) { delitem 31108,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30072) == 1) { delitem 30072,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30071) == 1) { delitem 30071,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30070) == 1) { delitem 30070,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30069) == 1) { delitem 30069,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30068) == 1) { delitem 30068,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30065) == 1) { delitem 30065,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30066) == 1) { delitem 30066,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+if(countitem(30067) == 1) { delitem 30066,1; warp "pvp_n_4-4", 99, 119; atcommand "@heal"; announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0; }
+
+next;
+
+mes "[PvP Sem Cargo]";
+
+mes "Boa luta ninja! ^^";
+
+announce "O shinobi "+strcharinfo(0)+" acaba de entrar no PvP sem Cargo.",0;
+
+next;
+
+warp "pvp_n_4-4", 99, 119;
+
+close;
+
+
+DON:
+
+mes "nao rolou";
+
+close;
+
+}
+
+hospital,95,33,5	duplicate(semcargo)	PvP Sem Cargo#1	1997
+hospital2,95,33,5	duplicate(semcargo)	PvP Sem Cargo#2	1997
+hospital3,95,33,5	duplicate(semcargo)	PvP Sem Cargo#3	1996
+hospital4,95,33,5	duplicate(semcargo)	PvP Sem Cargo#4	1998
+lou_in02,63,174,2	duplicate(semcargo)	PvP Sem Cargo#5	1997
+
+// MAPFLAG 
+
+pvp_n_4-4	mapflag	noteleport
+pvp_n_4-4	mapflag	nowarp
+pvp_n_4-4	mapflag	nodrop
+pvp_n_4-4	mapflag	nomemo
+pvp_n_4-4	mapflag	notrade
+pvp_n_4-4	mapflag	nosave	SavePoint
+pvp_n_4-4	mapflag	nostorage

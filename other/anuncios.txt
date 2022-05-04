@@ -1,0 +1,20 @@
+-	script	Anuncios	-1,{
+
+OnMinute01:
+OnMinute20:
+OnMinute38:
+OnMinute54:
+
+	setarray .News$[0],	// Random Mensagens
+		"[Naruto RPG Online] : Para saber onde upar nível especifico, abra o WorldMap do NRO e aperte TAB. Utilize Ctrl + ' para abrir. ",
+		"[Naruto RPG Online] : O servidor é completamente gratuito. Sua doação somente incentiva, é uma colaboração!",
+		"[Naruto RPG Online] : Participe do nosso Discord Oficial que se encontra no fórum!",
+		"[Naruto RPG Online] : O compartilhamento dos seus itens e conta é uma responsabilidade sua, STAFF não se responsabiliza por compartilhamento!",
+		"[Naruto RPG Online] : Curta-nos na página do facebook. www.facebook.com/narutoonrpg",
+		"[Naruto RPG Online] : Está com dificuldade? Entre no nosso fórum e leia os tutoriais!",
+		"[Naruto RPG Online] : Entre no chat da sua vila no Discord Oficial e participe do Discord privado da vila!",
+		"[Naruto RPG Online] : Dúvidas? Digite @dicas";
+		
+	announce .News$[ rand( getarraysize( .News$ ) ) ],0; // Anuncio.
+	end;
+}

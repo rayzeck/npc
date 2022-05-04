@@ -1,0 +1,594 @@
+//um_fild01,118,280,4	script	Estranho	412,5,5,{
+
+	query_sql("SELECT `quest_points`, `S`, `A`, `B`, `C`, `D`, `E`, `D_DIA`, `C_DIA`, `B_DIA`, `A_DIA`, `S_DIA` FROM `char` WHERE `char_id` = '"+$@partymembercid[.@i]+"'", @qp, @s, @a, @b, @c, @d, @e, @d_dia, @c_dia, @b_dia, @a_dia, @s_dia);
+
+if (base_nukenin >= 1) {mes "Desistiu? uh"; close;}
+if(Class == 7 || Class == 8 || Class == 9 || Class == 10 || Class == 4008 || Class == 4009 || Class == 4010 || Class == 4011) {mes "Você é nukenin por acaso? uh"; close;}
+//if(Class < 4019) {
+if(BaseLevel < 700) {mes "Volta pra casa e upe seu level."; close;}
+mes "[Estranho]";
+mes "Ei! Você! Ouvi falar que quer seguir um caminho diferente,";
+next;
+mes "[Estranho]";
+mes "Talvez eu tenha escutado errado, ou talvez você seja a pessoa certa";
+next;
+mes "[Estranho]";
+mes "Mas, deixe-me ver seus olhos";
+npctalk "Olhe para mim!";
+sleep2 2000;
+mes "Hm. Eu consigo ver...";
+atcommand "@effect 97";
+sleep2 100;
+next;
+atcommand "@effect 92";
+mes "^0000FF***você vê o seu futuro diante de seus olhos e tudo está um caôs***^000000";
+next;
+atcommand "@effect 49";
+mes "... a chama queima em seus olhos...";
+next;
+mes "^0000FF***O homem recua dois passos para trás antes de falar alguma coisa.***^000000";
+next;
+mes "[Estranho]";
+mes "Certo, então... Venha comigo!";
+next;
+menu "Sim, claro!",L_sim,"Não vai dar",L_nao;
+
+L_sim:
+next;
+mes "[Estranho]";
+mes "Venha rápido.";
+set base_nukenin,1;
+next;
+warp "gef_fild05" ,252,152;
+close;
+
+L_nao:
+next;
+mes "[Estranho]";
+mes "Eu sabia que você...";
+sleep2 1000;
+mes "... era um fraco!";
+close;
+
+}
+
+gef_fild05,252,152,5	script	Água	111,3,3,{
+	if(base_nukenin != 1) {mes "O mar... tão calmo."; close;}
+	mes "- ^3366FFVocê vê um návio e um homem abanando a mão para você, como se o chamasse.^000000 -";
+	next;
+	menu "Ir ao Návio",chakra,"Não fazer nada",nada;
+	
+	chakra:
+	mes "[^3366FF"+strcharinfo(0)+"^000000]";
+	mes "Concentrar chakra nos pés!";
+	next;
+	specialeffect2 488;
+	set base_nukenin,2;
+	close2;
+	warp "treasure01" ,69,26;
+	end;
+
+nada:
+close;
+
+}
+	
+treasure01,63,33,4	script	Senbai	730,3,3,{
+
+	mes "[Shinobi]";
+	mes "Olá "+StrCharInfo(0)+"!";
+	mes "Você tem certeza que quer continuar nesse caminho obscuro?";
+	next;
+	if( select("Claro!:Vou pensar...") == 2 )
+	{
+		mes "[Shinobi]";
+		mes "Tudo bem, estarei aqui se você mudar de idéia.";
+		next;
+		mes "Você voltará para casa!";
+		warp "SavePoint",0,0;
+		close;
+	}
+	mes "[Shinobi]";
+	mes "Bom, vou te falar quais itens precisa me trazer, mas...";
+	mes "Tome bastante cuidado. Caso morra durante a quest, perderá tudo! Começará do zero!";
+	next;
+	switch(select("Ok:Deixa pra lá"))
+	{
+	case 1:
+		mes "[Shinobi]";
+		mes "Me traga tudo que eu lhe pedir:";
+		next;
+		mes "20X "+getitemname(749);
+		mes "20X "+getitemname(748);
+		mes "20X "+getitemname(751);
+		mes "60X "+getitemname(755);
+		mes "20X "+getitemname(739);
+		mes "500000000 Zenys";
+		next;
+		mes "[Shinobi]";
+		mes "Deseja fazer esta quest?";
+		next;
+		if( select("Sim!:Agora não...") == 2 )
+		{
+			mes "[Shinobi]";
+			mes "Tudo bem... Até mais!";
+			close;
+		}
+		if(countitem(749) >= 20 && countitem(748) >= 20 && countitem(751) >= 20 && countitem(755) >= 60 && countitem(739) >= 20 && Zeny >= 500000000)
+		{
+			delitem 749,20;
+			delitem 748,20;
+			delitem 751,20;
+			delitem 755,60;
+			delitem 739,20;
+			set Zeny,Zeny-500000000;
+			mes "[Shinobi]";
+			mes "Parabéns! Agora, começará o seu teste!";
+			next;
+			mes "[Shinobi]";
+			mes "Você será teletransportado";
+			set base_nukenin,3;
+			next;
+			warp "ama_in01",84,184;
+			close;
+		}
+		break;
+	case 2:
+		mes "[Shinobi]";
+		mes "Tudo bem, estarei aqui se você mudar de idéia.";
+		close;
+	}
+	mes "[Shinobi]";
+	mes "Me desculpe, mas você não tem todos os itens necessários para esta quest.";
+	mes "Volte quando você tiver todos os itens!";
+	close;
+}
+
+ama_in01,84,186,4	script	Ferreiro	745,3,3,{
+
+if(base_nukenin != 3) {mes "[Nukenin]"; mes "Olá! Eu sou Nukenin~ Criador de Armas Ninjas da Vila oculta da Névoa."; close;}
+//if (countitem(1001) < 0) {mes "[Nukenin]"; mes "Olá! Eu sou Nukenin~ Criador de Armas Ninjas da Vila oculta da Névoa."; close;}
+mes "[Ferreiro]";
+mes "Olá, sou o ferreiro responsável dessa área, o que você precisa?";
+next;
+menu "Eu estava com o Nukenin no barco.",infosenbon,"Nada, só estou de passagem.",L_nao;
+
+	infosenbon:
+	mes "[Nukenin]";
+	mes "Hm...";
+	mes "Eu recebi um pergaminho sobre você, garoto.";
+	mes "Você realmente quer fundar uma facção nesse mundo?";
+	next;
+	menu "Sim. É o que mais quero!",L_case1;
+
+L_case1:
+
+	mes "[Nukenin]";
+	mes "Você tem certeza disso?!";
+	next;
+	mes "Você terá que passar por mim primeiro!";
+	menu "Ah é? Então vamos!",L_case2;
+
+
+L_case2:
+
+	specialeffect EF_HIT1;
+	sleep2 500;
+	specialeffect EF_HIT2;
+	sleep2 500;
+	specialeffect EF_HIT3;
+	sleep2 500;
+	mes "[Nukenin]";
+	mes "Ahhhhh! Pare!!! Eu irei falar!";
+	next;
+	mes "[Nukenin]";
+	mes "Você conseguirá criar um estilo de nova ^3366FFAkatsuki^000000";
+	mes "Mas não foi algo fácil até aqui, você não acha que iria facilitar agora né?.";
+	mes "Enfim. Saia por aquele portal e derrote quem você encontrar lá fora.";
+	mes "Se conseguir derrotá-lo, você conquistará a base dele.";
+	mes "Isso é tudo que sei.";
+	next;
+	mes "[^3366FF"+strcharinfo(0)+"^000000]";
+	mes "Tudo bem... Irei acreditar em você.";
+	mes "Até mais.";
+	set base_nukenin,4;
+	close;
+
+	L_nao:
+	close;
+
+}
+
+ama_in01,77,177,4	script	Saída#Nukenin	45,2,2,{
+if($EEinfo[1] == 1) && (#nevoa != 1) {mes "Você foi impedido de saír da vila"; close;}
+if (countitem(19020) >= 1) || (countitem(19195) >= 1) || (countitem(19196) >= 1) || (countitem(19197) >= 1) && ($EEinfo[1] == 1) {mes "Você foi impedido de saír da vila"; close;}
+if (base_nukenin != 4) {	warp "nevoa" ,272,74; }
+	mes "[Nukenin]";
+	mes "Achou que fosse te deixar ir embora assim tão fácil?";
+	next;
+	mes "Você estava em um Genjutsu desde quando entrou nessa sala.";
+	mes "Saia deste Genjutsu e conseguirá chegar em quem você precisa derrotar!";
+	next;
+	mes "- ^3366FFNukenin usa um Genjutsu em Você^000000 -";
+	specialeffect2 461;
+	close2;
+	warp "moc_pryd01" ,195,9;
+	close;
+} 
+
+moc_pryd01,195,9,4	script	Genjutsu#1	111,2,2,{
+mes "Você está preso em um genjutsu, ache a saída para se libertar!";
+close;
+
+}
+
+moc_pryd01,9,195,4	script	Saída#genjutsu	45,2,2,{
+	mes "[Nukenin]";
+	if (base_nukenin != 4) {	warp "nevoa" ,272,74; }
+	mes "Como você conseguiu escapar?";
+//	if (countitem(610) >= 1) {delitem 610,1;}
+	set base_nukenin,5;
+	next;
+	atcommand "@heal";
+	warp "odin_tem03",285,244;
+	close;
+}
+
+-	script	edi_1	1083,{
+
+OnInterifInit:
+
+monster "odin_tem03",277,234,"Líder Facção",1237,1,"edi_1::OnMapConquisted1";
+
+
+OnMapConquisted1:
+
+if (countitem(31224) >= 1 || countitem(31226) >= 1) goto L_nuke;
+
+//if(nukenin == 1 && countitem(30082) == 0 && countitem(30083) == 0 && countitem(30084) == 0 && countitem(30085) == 0) goto L_akat;
+
+end;
+
+
+
+L_nuke:
+
+set nukenin_ryous, nukenin_ryous + 20;
+getitem 31225,12;
+getitem 31224,1;
+delitem 31226,1;
+savepoint "thana_boss",115,153;
+announce "O Nukenin "+strcharinfo(0)+" acaba de conquistar uma base.",0;
+announce "Os shinobis escutam rumores de uma nova facção no mundo shinobi!",0;
+dispbottom "Você acaba de se tornar o novo lider da facção oficial do servidor.";
+dispbottom "Somente passe as chaves da base para membros da facção.";
+dispbottom "É obrigatório ter pelo menos 5 Shikens para o recrutamento de membros, abrindo oportunidade para pessoas de fora da sua panela.";
+dispbottom "O restante das vagas pode ser escolhido a dedo. Inatividade te retira do cargo.";
+dispbottom "Fale com a administração o mais rápido possível para setar os chapéus dos membros.";
+set #faccaomembro,1;
+warp "SavePoint",0,0;
+end;
+
+
+
+L_akat:
+
+for( set .id, 21; .id < 31; set .id, .id + 1 ){
+
+set $AMinfo[.id], $AMinfo[.id] + 1;
+
+}
+
+set $akatsuki_ryous, $akatsuki_ryous + 20;
+getitem 502,5;
+announce "O Ninja "+strcharinfo(0)+" da "+strcharinfo(2)+" acaba de conquistar uma aldeia",0;
+
+end;
+
+
+
+L_konoha:
+
+announce "O Ninja "+strcharinfo(0)+" da "+strcharinfo(2)+" acaba de conquistar uma aldeia",0;
+
+getitem 502,10;
+set $konoha_ryous,$konoha_ryous + 20;
+
+end;
+
+
+
+L_areia:
+
+announce "O Ninja "+strcharinfo(0)+" da "+strcharinfo(2)+" acaba de conquistar uma aldeia",0;
+
+set $areia_ryous, $areia_ryous + 20;
+
+end;
+
+
+
+L_nuvem:
+
+announce "O Ninja "+strcharinfo(0)+" da "+strcharinfo(2)+" acaba de conquistar uma aldeia",0;
+
+set $nuvem_ryous, $nuvem_ryous + 20;
+
+end;
+
+
+
+L_nevoa:
+
+announce "O Ninja "+strcharinfo(0)+" da "+strcharinfo(2)+" acaba de conquistar uma aldeia",0;
+
+set $nevoa_ryous, $nevoa_ryous + 20;
+
+end;
+
+}
+
+nevoa,272,74,4	script	-#1	111,2,2,{
+
+if (base_nukenin != 5) {end;}
+mes "[Conversa da casa vizinha]";
+mes "Eu ouvi dizer que um homem chamado Haku";
+mes "está matando várias pessoas na";
+mes "na ^3366FFVila oculta da Grama^000000";
+next;
+mes "[Mulher]";
+mes "Esse tal de Haku deve ser uma pessoa sem coração";
+mes "matar logo habitantes de uma vila como essa";
+mes "tão passiva...";
+emotion e_pif;
+set haku_raid,6;
+close;
+
+}
+
+umbala,130,100,5	script	Yume	703,{
+	if (haku_raid > 0) {
+	mes "[Yume]";
+	mes "O homem sem coração...";
+	mes "Ele está ao sul da vila, após o portão";
+	close;
+	}
+	else {
+	mes "[Yume]";
+	mes "Olá visitante!";
+	mes "Meu sensei me ensinou a usar isto";
+	mes "em todos os visitantes";
+	sc_start SC_SpeedUp1,5000,0;
+	specialeffect2 14;
+	specialeffect 54;
+	close;
+}
+}
+
+mjolnir_04,175,129,5	script	Homem Abatido	849,{
+	if (haku_raid > 0) {
+	mes "[Homem Abatido]";
+	mes "Maldito ^3366FFhaku^000000...";
+	close;
+	} 
+	else {mes "[Homem Abatido]"; mes "Nunca mais vou beber"; close; }
+}
+
+umbala,143,210,5	script	Criança Orfã	877,{
+	if (haku_raid > 0) {
+	mes "[Criança Orfã]";
+	mes "^3366FFHaku^000000...";
+	mes "matou meus pais...";
+	close;
+	}
+	else { mes "[Garotinha]"; mes "Que dia triste..."; close; }
+}
+
+um_fild04,222,290,5	script	Idoso	765,{
+	if (haku_raid > 0) {
+	mes "[Idoso]";
+	mes "Ei jovem, há uma pessoa chamada";
+	mes "^3366FFHaku^000000 matando várias pessoas";
+	mes "Vou mostrar para você por onde ele foi...";
+	mes "Vá atraz dele, por favor.";
+	viewpoint 1,183,27,1,0xFF0000;
+	close;
+	}
+	else { mes "[Idoso]"; mes "Ah! Que dor nas costas..."; close; }
+}
+
+
+cmd_fild03,149,370,5	script	Pista#1	111,5,5,{
+
+if (haku_raid < 6) {end;}
+mes "Hmm, umas pegadas frescas, elas estão indo ao sul";
+close;
+
+	OnTouch:
+	specialeffect 58;
+}
+
+cmd_fild03,153,302,5	script	Pista#2	111,5,5,{
+
+if (haku_raid < 6) {end;}
+mes "Marcas de sangue, parecem ir ao leste";
+close;
+
+	OnTouch:
+	specialeffect 58;
+}
+
+cmd_fild03,208,258,5	script	Pista#3	111,5,5,{
+
+if (haku_raid < 6) {end;}
+mes "Pegadas frescas, estão indo ao sul";
+close;
+
+	OnTouch:
+	specialeffect 58;
+}
+
+cmd_fild03,196,189,5	script	Pista#4	111,5,5,{
+
+if (haku_raid < 6) {end;}
+mes "Marcas de sangue, estão indo ao oeste";
+close;
+
+	OnTouch:
+	specialeffect 58;
+}
+
+//cmd_fild03,149,370
+//cmd_fild03,153,302
+//cmd_fild03,208,258
+//cmd_fild03,196,189
+//
+//Esconderijo dele poderia ser:
+//cmd_fild03,129,187
+
+
+
+moc_pryd01,0,0,0,0	monster	Capanga,999		1301,260,0,0,0
+moc_pryd01,0,0,0,0	monster	Baronesa,999		1702,0,0,0,0
+
+
+
+//------------------------------------------------------------------------------//
+//////////////////////////////////////////////////////////////////////////////////
+//---------------• Gerenciador de npc(script) versão 1.3------------------------//
+//////////////////////////////////////////////////////////////////////////////////
+//---------------------------------• Créditos-----------------------------------//
+//----------• Desenvolvido por carlos#skp ! Não remova os créditos !------------//
+//--------------• Modelo usado para optmização feito por Evanio.----------------//
+//==============================================================================//
+// • Changelog:-----------------------------------------------------------------//
+//-(Versão 1.0) Script iniciado, sendo possivel configurá-lo somente off-game---//
+//-(Versão 1.1) Script reestruturado, possibilitando configuração---------------//
+//In-Game-----------------------------------------------------------------------//
+//-(Versão 1.2)Adicionado opção de dar load em novos scripts--------------------//
+//-(Versão 1.3) Script optimizado, com base em um modelo de Evanio(Cronus)------//
+//-(Versão1.3b)-Adicionado a função de descarregar npc (@unloadnpc)-------------//
+//==============================================================================//
+// • Configurações:-------------------------------------------------------------//
+// - Mande uma pm para npc:load contendo as informações:------------------------//
+//* !dir para selecionar um diretório-------------------------------------------//
+//* !txt para carregar um arquivo do diretório----------------------------------//
+//* !npc para habilitar ou desabilitar um npc já carregado¹---------------------//
+//==============================================================================//
+//------------------------------• Observações-----------------------------------//
+// OBS¹: O nome do npc tem que estar correto para funcionar---------------------//
+//////////////////////////////////////////////////////////////////////////////////
+-	script	load	-1,{
+
+OnWhisperGlobal:
+if(getgmlevel() == 99) {
+goto npc;
+end;
+}
+npc:
+set @n1$,"[^A020F0Gerenciador de Script^000000]";
+set @h$,"[^008B00Habilitado^000000]";
+set @d$,"[^FF0000Desabilitado^000000]";
+set @atv$,"[^008B00Ativar^000000]";
+set @dstv$,"[^FF0000Desativar^000000]";
+set @ex$,"^FF0000personalizado^000000/^FF0000pasta^000000";
+set @d1$,"[^FF0000Descarregado^000000]";
+		if(compare(@whispervar0$,"!dir"))
+		{
+			mes @n1$;
+			mes "Coloque o diretório à trabalhar..";
+			mes "Ex: "+@ex"";
+			mes "Digite aqui: ";
+			next;
+			input @dir$;
+			next;
+			mes @n1$;
+			mes "Ok, seu diretório atual é:";
+			mes "npc/"+@dir" .";
+			close;
+		}
+		if(compare(@whispervar0$,"!txt"))
+		{
+			mes @n1$;
+			mes "Aqui você coloca o seu arquivo .txt";
+			mes "Não precisa digitar o .txt";
+			mes "Somente o nome do arquivo";
+			mes "Por ex: se for npc.txt,";
+			mes "Ficara apenas npc !";
+			next;
+			input @np$;
+			next;
+			mes @n1$;
+			mes "Você deseja carregar: ";
+			mes "npc/"+@dir"/"+@np".txt ?";
+			next;
+				if( select("Sim:Não") == 2 )
+				{
+					mes @n1$;
+					mes "Ok, volte quando precisar";
+					close;
+				}
+			atcommand "@loadnpc npc/"+@dir"/"+@np".txt";
+			mes "O script "+@np" foi "+@h"";
+			mes "Volte quando precisar !";
+			close;
+		}
+		if(compare(@whispervar0$,"!npc"))
+		{
+			mes @n1$;
+			mes "Aqui você coloca o nome correto de um npc...";
+			mes "Ou seja o nome que fica no cabeçalho do npc.";
+			mes "Por ex: seu npc se chama Teleporte";
+			mes "Isso carregaria ou não o npc Teleporte";
+			next;
+			input @name$;
+			next;
+			mes @n1$;
+			mes "Deseja "+@atv" ou "+@dstv"";
+				if( select("Ativar:Desativar") == 2 )
+				{
+					next;
+					disablenpc @name$;
+					mes @n1$;
+					mes "Ok, o npc foi "+@d" !";
+					close;
+				}
+			next;
+			enablenpc @name$;
+			mes @n1$;
+			mes "Ok, o npc foi "+@h" !";
+			close;
+		}
+		if(compare(@whispervar0$,"!des"))
+		{
+			mes @n1$;
+			mes "Aqui você coloca o nome do script,";
+			mes "Que deseja dar unload..";
+			mes "Por ex: o script se chama vip";
+			mes "Digite vip e desative o script";
+			next;
+			input @unl$;
+			next;
+			mes @n1$;
+			mes "Deseja descarregar esse script ?";
+				if( select("Sim:Não") == 2 )
+				{
+					next;
+					mes @n1$;
+					mes "Ok, estarei aqui quando precisar !";
+					close;
+				}
+			next;
+			atcommand "@unloadnpc "+@unl"";
+			mes @n1$;
+			mes "Ok, o npc foi "+@d1" !";
+			close;
+		}
+	dispbottom "[Gerenciador de Script]";
+	dispbottom "Comando inválido";
+	dispbottom "Utilize os comandos abaixo:";
+	dispbottom "!dir (seleciona um diretório)";
+	dispbottom "!txt (para carregar um script do diretório selecionado)";
+	dispbottom "!npc (Para habilitar/desabilitar scripts ja carregados)";
+	dispbottom "!des (Descarrega um script)";
+}

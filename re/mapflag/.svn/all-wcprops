@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/rathena/rathena/!svn/ver/41366/trunk/npc/re/mapflag
+END
+nopvp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/26736/trunk/npc/re/mapflag/nopvp.txt
+END
+nowarp.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/31802/trunk/npc/re/mapflag/nowarp.txt
+END
+partylock.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/31840/trunk/npc/re/mapflag/partylock.txt
+END
+restricted.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rathena/rathena/!svn/ver/38938/trunk/npc/re/mapflag/restricted.txt
+END
+nowarpto.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/33554/trunk/npc/re/mapflag/nowarpto.txt
+END
+nopenalty.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/31802/trunk/npc/re/mapflag/nopenalty.txt
+END
+night.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/11754/trunk/npc/re/mapflag/night.txt
+END
+noicewall.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/rathena/rathena/!svn/ver/41366/trunk/npc/re/mapflag/noicewall.txt
+END
+reset.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/mapflag/reset.txt
+END
+nolockon.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/mapflag/nolockon.txt
+END
+gvg.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/19494/trunk/npc/re/mapflag/gvg.txt
+END
+skill_duration.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/rathena/rathena/!svn/ver/39116/trunk/npc/re/mapflag/skill_duration.txt
+END
+hidemobhpbar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/rathena/rathena/!svn/ver/26736/trunk/npc/re/mapflag/hidemobhpbar.txt
+END
+town.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/31802/trunk/npc/re/mapflag/town.txt
+END
+privateairship.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/rathena/rathena/!svn/ver/34818/trunk/npc/re/mapflag/privateairship.txt
+END
+nomemo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/31840/trunk/npc/re/mapflag/nomemo.txt
+END
+nobranch.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/31840/trunk/npc/re/mapflag/nobranch.txt
+END
+noteleport.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rathena/rathena/!svn/ver/31840/trunk/npc/re/mapflag/noteleport.txt
+END
+nosave.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/31840/trunk/npc/re/mapflag/nosave.txt
+END

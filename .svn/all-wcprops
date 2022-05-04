@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/rathena/rathena/!svn/ver/57002/trunk/npc
+END
+scripts_guild.conf
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/53170/trunk/npc/scripts_guild.conf
+END
+scripts_custom.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/12289/trunk/npc/scripts_custom.conf
+END
+scripts_mapflags.conf
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/39116/trunk/npc/scripts_mapflags.conf
+END
+scripts_monsters.conf
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/rathena/rathena/!svn/ver/31454/trunk/npc/scripts_monsters.conf
+END
+scripts_warps.conf
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/11368/trunk/npc/scripts_warps.conf
+END
+scripts_jobs.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/13200/trunk/npc/scripts_jobs.conf
+END
+scripts_test.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/12170/trunk/npc/scripts_test.conf
+END
+scripts_athena.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/39194/trunk/npc/scripts_athena.conf
+END

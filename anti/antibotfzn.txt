@@ -1,0 +1,78 @@
+
+-	script	AntiBoT	-1,{
+
+OnPCLoginEvent:
+//===============//=======================
+set pontos,0;
+set .@npc$ , "^FF0000Beijo do titio ygor000000"; // nome do npc
+set @numerais,rand(0,999999);
+set @rand,rand(0,999999);
+//============//==========================
+ 
+OnNPCKillEvent:
+set pontos,pontos +1;
+if(pontos == 200) callsub case1;
+end;
+ 
+
+if(getgmlevel() >= 99) { end; }    // se quizer que gm ou adm não passe pelo sistema tire o //
+
+ 
+				case1:
+                mes .@npc$;
+				atcommand "@battleignore";
+                mes "Digite o valor este valor - ^800080 "+ @numerais +"  ^000000";
+                attachnpctimer strcharinfo(0);
+                initnpctimer;
+                input @valor;
+               
+                        if (@valor ==  @numerais){
+                                next;
+                                mes .@npc$;
+								atcommand "@battleignore";
+                                mes "Tudo certo, tenha um bom jogo";
+                                set @ok,1;								
+								set pontos,0;
+                                close;
+                                }
+ 
+                        else {
+                                mes .@npc$;
+                                mes "^FF0000 O valor digitado está errado  ^000000";
+                                close2;
+								announce ""+strcharinfo(0)+" acabou de errar o anti-bot contra programas maus intencionados. Fiquem atento nele e denunciem!",bc_blue|bc_all;
+                                atcommand "@kick "+ strcharinfo(0) +"";
+                                }
+                                       
+ 
+        case2:
+				mes .@npc$;
+                mes "Digite o valor este valor - ^800080 "+ @numerais +"  ^000000";
+				atcommand "@battleignore";
+                attachnpctimer strcharinfo(0);
+                initnpctimer;
+                input @valor;
+               
+                        if (@valor ==  @numerais){
+                                next;
+                                mes .@npc$;
+								atcommand "@battleignore";
+                                mes "Tudo certo, tenha um bom jogo";
+                                set @ok,1;
+								set pontos,0;
+                                close;
+                                }
+ 
+                        else {
+                                mes .@npc$;
+                                mes "^FF0000 O valor digitado está errado  ^000000";
+                                close2;
+								announce ""+strcharinfo(0)+" acabou de errar o anti-bot contra programas maus intencionados. Fiquem atento nele e denunciem!",bc_blue|bc_all;
+                                atcommand "@kick "+ strcharinfo(0) +"";
+                                }
+                                       
+        OnTimer50000:
+                if(@ok) end; else
+                atcommand "@kick "+strcharinfo(0);
+                end;
+                }

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/rathena/rathena/!svn/ver/56409/trunk/npc/custom
+END
+resetnpc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/22860/trunk/npc/custom/resetnpc.txt
+END
+itemmall.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/rathena/rathena/!svn/ver/11754/trunk/npc/custom/itemmall.txt
+END
+item_signer.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rathena/rathena/!svn/ver/26553/trunk/npc/custom/item_signer.txt
+END
+jobmaster.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/rathena/rathena/!svn/ver/51158/trunk/npc/custom/jobmaster.txt
+END
+breeder.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/19494/trunk/npc/custom/breeder.txt
+END
+card_remover.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/rathena/rathena/!svn/ver/30461/trunk/npc/custom/card_remover.txt
+END
+platinum_skills.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/rathena/rathena/!svn/ver/25766/trunk/npc/custom/platinum_skills.txt
+END
+stylist.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/rathena/rathena/!svn/ver/12170/trunk/npc/custom/stylist.txt
+END
+woe_controller.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/rathena/rathena/!svn/ver/53170/trunk/npc/custom/woe_controller.txt
+END
+card_seller.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/rathena/rathena/!svn/ver/29530/trunk/npc/custom/card_seller.txt
+END
+healer.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/12170/trunk/npc/custom/healer.txt
+END
+warper.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/rathena/rathena/!svn/ver/53170/trunk/npc/custom/warper.txt
+END

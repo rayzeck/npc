@@ -1,0 +1,30 @@
+-	script	WorldBossTeste4	-1,{
+
+OnWed2100:
+OnSun2100:
+atcommand "@agitstart";
+gvgon "schg_cas01";
+gvgon "schg_dun01";
+gvgon "payg_cas01";
+gvgon "payg_cas04";
+gvgon "sch_gld";
+announce "[Guerra Ninja]: A guerra esta aberta, acesso pelo Centro de Treinamento!",0;
+sleep 4000;
+announce "[Guerra Ninja]: O primeiro ninja a destruir o Emperium, recebera um Fuin no Sho para a vila!",0;
+sleep 4000;
+announce "[Guerra Ninja]: Quem sera o vencedor dessa vez?!",0;
+sleep 1800;
+announce "[Guerra Ninja]: O Emperium foi invocado!",0;
+
+monster "schg_cas01",119,271,"Guerra Ninja",1288,1,"WorldBossTeste4::OnMobMinato";
+end;
+
+	OnMobMinato:
+		announce "O Ninja "+strcharinfo(0)+" da "+strcharinfo(2)+" acaba de quebrar o Emperium e receber 1 Fuuin no Sho!",0;
+			getitem 753,1;
+			gvgoff "schg_cas01";
+			pvpon "schg_cas01";
+			atcommand "@agitend";
+			end;
+
+		}
