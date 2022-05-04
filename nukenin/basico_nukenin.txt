@@ -1,3 +1,25 @@
+pay_fild07-1,276,369,4	script	SavePoint	100,{
+set .n$,"["+strnpcinfo(1)+"]";
+setarray .x[0],50,60,70,80,90;
+setarray .y[0],50,60,70,80,90;
+
+mes .n$;
+mes "Do you want to save?";
+if(select("- Yes:- No") - 1) close;
+next;
+set n_save,1;
+mes .n$;
+Your Savepoint has been saved.";
+close;
+
+OnPCDieEvent:
+if(n_save) {
+set coord,rand(6);
+warp "SavePoint",.x[coord],.y[coord];
+}
+end;
+}
+
 //force_1-1,28,22,4	script	Ancião Nukenin	847,{
 //mes "Obrigado por clicar";
 //next;
