@@ -206,23 +206,25 @@ force_1-1,40,26,3	script	Shinobi Misterioso#10	412,{
 
 //if(jounin != 1) {mes "Você é muito fraquinho pra falar comigo"; close;}
 //if (quest_nukenin != 0) {mes "[^DC143CShinobi Misterioso^000000]"; mes "Não tenho nada pra falar com você"; close;}
-	if(#konoha == 1) {mes "[^DC143CShinobi Misterioso^000000]"; mes "1- Não tenho nada pra falar com você"; close;}
-	if(#suna == 1) {mes "[^DC143CShinobi Misterioso^000000]"; mes "2- Não tenho nada pra falar com você"; close;}
+	if(#konoha == 1) {mes "[^DC143CShinobi Misterioso^000000]"; mes "Não falo com pessoas de Konoha."; close;}
+	if(#suna == 1) {mes "[^DC143CShinobi Misterioso^000000]"; mes "Não falo com pessoas de Suna."; close;}
 	if(#comeconuke == 2) {mes "[^DC143CShinobi Misterioso^000000]"; mes "3- Não tenho nada pra falar com você"; close;}
-	if(#nuvem == 1) {mes "[^DC143CShinobi Misterioso^000000]"; mes "4- Não tenho nada pra falar com você"; close;}
+	if(#nuvem == 1) {mes "[^DC143CShinobi Misterioso^000000]"; mes "Não falo com pessoas da Nuvem."; close;}
 	if(#comeconuke == 1) {mes "[^DC143CTOME CUIDADO, GAROTO^000000]"; warp "moc_fild07",216,371; atcommand "@blvl 900"; atcommand "@vit 2000"; atcommand "@dex 2000"; atcommand "@str 2000"; atcommand "@speed 50"; atcommand "@heal"; close;}
 	if(#quest_nukenin == 1) goto ja_e_de_outra;
 mes "[^DC143CShinobi Misterioso^000000]";
-mes "Eu vejo em você a escuridão meu jovem. Você possui um certo rancor estou certo?";
+mes "Eu vejo em você a escuridão meu jovem. Você tem um certo rancor dentro de ti.";
 menu "- Como você sabe!?",L_sim,"- Não sei do que esta falando",L_nao;
 
 L_sim:
+unittalk getcharid(3), "Como você sabe?",bc_self;
 next;
 mes "[^DC143CShinobi Misterioso^000000]";
 mes "Você possui os mesmos olhos que eu quando tinha a sua idade, quer se livrar desse odio, desse rancor. Quer viver sem se importar com as regras taxadas por esse mundo não é? Sinto em você o desejo pela paz interior meu jovem...";
 menu "- Como posso fazer isso",L_sim2,"- Você precisa de um médico...",L_nao;
 
 L_sim2:
+unittalk getcharid(3), "Como posso fazer isso?",bc_self;
 next;
 mes "[^DC143CShinobi Misterioso^000000]";
 //mes "Primeiro você deve abandonar tudo o que você tem, então antes de tudo me entregue a sua bandana. Quando for a hora certa eu a devolverei para você";
@@ -231,6 +233,7 @@ mes "Primeiro você deve saber que terá que entregar tudo, sua vida como você a c
 menu "- Tenho certeza, quero me tornar um renegado.",L_sim3,"- Jamais, estou indo embora",L_nao;
 
 L_sim3:
+unittalk getcharid(3), "Sim! Quero virar um nukenin!",bc_self;
 next;
 //if(countitem(19001) == 1) {delitem 19001,1;}
 //if(countitem(19006) == 1) {delitem 19006,1;}
@@ -263,6 +266,7 @@ next;
 //if(countitem(19127) == 1) {delitem 19127,1;}
 mes "[^DC143CShinobi Misterioso^000000]";
 mes "Vejo que esta determinado a ser livre então eu vou te ajudar. No deserto vive um amigo meu, o Strope, ele irá te guiar para o próximo passo.";
+sleep2 500;
 warp "moc_fild07",216,371;
 set #comeconuke,1;
 set faloucomnukenin,1;
@@ -273,11 +277,11 @@ atcommand "@str 2000";
 atcommand "@dex 2000";
 atcommand "@speed 50";
 atcommand "@heal";
-dispbottom "Você recebeu nível para encarar a dificuldade dessa sua nova vida!";
-dispbottom "Você recebeu nível para encarar a dificuldade dessa sua nova vida!";
+dispbottom "Você recebeu nível para encarar a dificuldade dessa etapa!";
 close;
 
 L_nao:
+unittalk getcharid(3), "Me deixe. Eu vou me tornar um Kage!",bc_self;
 close;
 
 }
