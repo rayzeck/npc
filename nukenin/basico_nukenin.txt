@@ -9,7 +9,7 @@ if(select("- Yes:- No") - 1) close;
 next;
 set n_save,1;
 mes .n$;
-mes Your Savepoint has been saved.";
+mes "Your Savepoint has been saved.";
 close;
 
 OnPCDieEvent:
